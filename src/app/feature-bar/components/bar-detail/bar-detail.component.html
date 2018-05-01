@@ -1,0 +1,88 @@
+<!-- <pre>{{barDetailVar | json}}</pre> -->
+<div class="span9">
+
+  <div class="row">
+    <div class="page-inner">
+      <div id="gallery" class="span31">
+        <a href="assets/product-Images/large/f1.jpg" title="Fujifilm FinePix S2950 Digital Camera">
+          <img src="assets/product-Images/{{barDetailSpec.barPrimaryImage}}" alt="Fujifilm FinePix S2950 Digital Camera" />
+        </a>
+      </div>
+      <div class="span61">
+        <h3>{{barDetailSpec.barName}}</h3>
+        <small>{{barDetailSpec.barAddressLine1}}</small>
+
+        <br/><br/>
+        <p>{{barDetailSpec.barDetails}}</p>
+        
+        <br class="clr" />
+        
+
+      </div>
+      <div class="span61">
+        <div class="tab">
+          <button class="tablinks" (click)="openTab(event, 'overview')">Overview</button>
+          <button class="tablinks" (click)="openTab(event, 'events')">Events</button>
+          <button class="tablinks" (click)="openTab(event, 'menu')">Menu</button>
+          <button class="tablinks" (click)="openTab(event, 'reviews')">Reviews</button>
+        </div>
+        <div>
+          <div id="overview" class="tabcontent" style="display: block;">
+            <app-bar-overview></app-bar-overview>
+          </div>
+          <div id="events" class="tabcontent">
+            <app-bar-event></app-bar-event>
+          </div>
+          <div id="menu" class="tabcontent">
+            <app-bar-menu></app-bar-menu>
+          </div>
+          <div id="reviews" class="tabcontent">
+            <app-bar-reviews></app-bar-reviews>
+          </div>
+        </div>
+      </div>
+
+      <div class="clear"></div>
+    </div>
+
+  </div>
+
+
+</div>
+<div id="sidebar" class="span3">
+
+
+  <div class="thumbnail">
+    <img src="assets/product-Images/panasonic.jpg" alt="Bootshop panasonoc New camera" />
+    <div class="caption">
+      <h5>Panasonic</h5>
+      <h4 style="text-align:center">
+        <a class="btn" href="product_details.html">
+          <i class="icon-zoom-in"></i>
+        </a>
+        <a class="btn" href="#">Add to
+          <i class="icon-shopping-cart"></i>
+        </a>
+        <a class="btn btn-primary" href="#">$222.00</a>
+      </h4>
+    </div>
+  </div>
+  <br/>
+  <div class="thumbnail">
+    <img src="assets/product-Images/kindle.png" title="Bootshop New Kindel" alt="Bootshop Kindel">
+    <div class="caption">
+      <h5>Kindle</h5>
+      <h4 style="text-align:center">
+        <a class="btn" href="product_details.html">
+          <i class="icon-zoom-in"></i>
+        </a>
+        <a class="btn" href="#">Add to
+          <i class="icon-shopping-cart"></i>
+        </a>
+        <a class="btn btn-primary" href="#">$222.00</a>
+      </h4>
+    </div>
+  </div>
+  <br/>
+
+</div>
