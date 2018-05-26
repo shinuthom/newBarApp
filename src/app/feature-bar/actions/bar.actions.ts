@@ -5,6 +5,10 @@ export class BarActions {
     static FETCH_BAR_LIST_SUCCESS = 'FETCH_BAR_LIST_SUCCESS';
     static FETCH_BAR_LIST_FAILURE = 'FETCH_BAR_LIST_FAILURE';
 
+    static FETCH_BAR_LIST_ONSCROLL = 'FETCH_BAR_LIST_ONSCROLL';
+    static FETCH_BAR_LIST_ONSCROLL_SUCCESS = 'FETCH_BAR_LIST_ONSCROLL_SUCCESS';
+    static FETCH_BAR_LIST_ONSCROLL_FAILURE = 'FETCH_BAR_LIST_ONSCROLL_FAILURE';
+
     static FETCH_BAR_DETAILS = 'FETCH_BAR_DETAILS';
     static FETCH_BAR_DETAILS_SUCCESS = 'FETCH_BAR_DETAILS_SUCCESS';
     static FETCH_BAR_DETAILS_FAILURE = 'FETCH_BAR_DETAILS_FAILURE';
@@ -24,6 +28,25 @@ export class BarActions {
     fetchBarListFailure(data: any): Action {
         return {
             type: BarActions.FETCH_BAR_LIST_FAILURE,
+            payload: data
+        }
+    }
+
+    fetchBarListOnScroll(data: any): Action {
+        return {
+            type: BarActions.FETCH_BAR_LIST_ONSCROLL,
+            payload: data
+        };
+    };
+    fetchBarListOnScrollSuccess(data: any): Action {
+        return {
+            type: BarActions.FETCH_BAR_LIST_ONSCROLL_SUCCESS,
+            payload: data
+        };
+    };
+    fetchBarListOnScrollFailure(data: any): Action {
+        return {
+            type: BarActions.FETCH_BAR_LIST_ONSCROLL_FAILURE,
             payload: data
         }
     }

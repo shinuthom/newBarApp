@@ -1,4 +1,4 @@
-<div class="span91">
+<div class="span91" infinite-scroll [infiniteScrollDistance]="0" [infiniteScrollThrottle]="300" (scrolled)="onScroll()">
     <h4>Best bars & pubs</h4>
     <ul class="thumbnails">
         <app-bar-list [barList]="barList$ | async"></app-bar-list>

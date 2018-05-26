@@ -11,12 +11,12 @@ export class BackendService {
     }
 
     fetchBarList(start) {
-        let url = 'http://localhost/barApp/getBarList.php';
+        let url = `http://localhost/barApp/services/getBarList.php?start=${start}`;
         return this.get(url, null).map(response => response.json().list.map(this.beToFeMapperService.mapBarList))
             .catch(err => this.hasError(err));
     }
     fetchBarDetails(barId) {
-        let url = `http://localhost/barApp/getBarDetail.php?id=${barId}`;
+        let url = `http://localhost/barApp/services/getBarDetail.php?id=${barId}`;
         return this.get(url, null).map(response => this.beToFeMapperService.mapBarDetails(response.json()))
             .catch(err => this.hasError(err));
     }

@@ -2,7 +2,7 @@
 <li class="span3" *ngFor="let list of barList">
   <div class="thumbnail">
     <a href="#" [routerLink]="['/bar/detail', list.barId]">
-      <img src="assets/product-Images/{{list.barPrimaryImage}}" alt="" />
+      <img src="{{list.barPrimaryImage}}" alt="" />
     </a>
     <div class="caption">
       <h5>{{list?.barName}}</h5>
@@ -10,15 +10,7 @@
         {{list?.barAddressLine1}}
       </p>
 
-      <h4 style="text-align:center">
-        <a class="btn" href="product_details.html">
-          <i class="icon-zoom-in"></i>
-        </a>
-        <a class="btn" href="#">Add to
-          <i class="icon-shopping-cart"></i>
-        </a>
-        <a class="btn btn-primary" href="#">$222.00</a>
-      </h4>
+      
     </div>
   </div>
 </li>

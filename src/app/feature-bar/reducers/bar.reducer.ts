@@ -6,7 +6,8 @@ import * as _ from  'lodash';
 
 export const initialState: BarState = {
     barList: [],
-    barDetail:[]
+    barDetail:[],
+    previousBarCount: -1
 }
 
 export function reducer (state: BarState = initialState, { type, payload }: Action) {
@@ -15,6 +16,12 @@ export function reducer (state: BarState = initialState, { type, payload }: Acti
         case BarActions.FETCH_BAR_LIST_SUCCESS:
             newState = _.cloneDeep(state);
             newState.barList = payload;
+            newState.previousBarCount = payload.length;
+            return newState;
+        case BarActions.FETCH_BAR_LIST_ONSCROLL_SUCCESS:
+            newState = _.cloneDeep(state);
+            newState.barList = [...state.barList,...payload];
+            newState.previousBarCount = payload.length;
             return newState;
         case BarActions.FETCH_BAR_DETAILS_SUCCESS:
             newState = _.cloneDeep(state);

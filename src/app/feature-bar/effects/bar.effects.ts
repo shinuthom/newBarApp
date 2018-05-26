@@ -19,6 +19,11 @@ export class BarEffects {
         .switchMap((action: Action) => this.backendService.fetchBarList(action.payload))
         .map((data: any) => this.successOrFailed(data, this.barActions.fetchBarListSuccess, this.barActions.fetchBarListFailure));
     @Effect()
+    barListOnScroll$ = this.actions$
+        .ofType(BarActions.FETCH_BAR_LIST_ONSCROLL)
+        .switchMap((action: Action) => this.backendService.fetchBarList(action.payload))
+        .map((data: any) => this.successOrFailed(data, this.barActions.fetchBarListOnScrollSuccess, this.barActions.fetchBarListOnScrollFailure));
+    @Effect()
     barDetails$ = this.actions$
         .ofType(BarActions.FETCH_BAR_DETAILS)
         .switchMap((action: Action) => this.backendService.fetchBarDetails(action.payload))

@@ -5,7 +5,7 @@
     <div class="page-inner">
       <div id="gallery" class="span31">
         <a href="assets/product-Images/large/f1.jpg" title="Fujifilm FinePix S2950 Digital Camera">
-          <img src="assets/product-Images/{{barDetailSpec.barPrimaryImage}}" alt="Fujifilm FinePix S2950 Digital Camera" />
+          <img src="{{barDetailSpec.barPrimaryImage}}" alt="Fujifilm FinePix S2950 Digital Camera" />
         </a>
       </div>
       <div class="span61">
@@ -21,10 +21,10 @@
       </div>
       <div class="span61">
         <div class="tab">
-          <button class="tablinks" (click)="openTab(event, 'overview')">Overview</button>
-          <button class="tablinks" (click)="openTab(event, 'events')">Events</button>
-          <button class="tablinks" (click)="openTab(event, 'menu')">Menu</button>
-          <button class="tablinks" (click)="openTab(event, 'reviews')">Reviews</button>
+          <button class="tablinks" (click)="openTab('overview')">Overview</button>
+          <button class="tablinks" (click)="openTab('events')">Events</button>
+          <button class="tablinks" (click)="openTab('menu')">Menu</button>
+          <button class="tablinks" (click)="openTab('reviews')">Reviews</button>
         </div>
         <div>
           <div id="overview" class="tabcontent" style="display: block;">
