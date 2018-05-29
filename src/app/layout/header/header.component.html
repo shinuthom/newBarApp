@@ -11,7 +11,7 @@
         <a class="brand" href="index.html">
           <img src="themes/images/logo.png" alt="Bootsshop" />
         </a>
-        <form class="form-inline navbar-search" method="post" action="products.html">
+        
           <input id="srchFld" class="srchTxt" type="text" />
           <select class="srchTxt">
             <option>All</option>
@@ -22,7 +22,7 @@
             <option>BOOKS & ENTERTAINMENTS </option>
           </select>
           <button type="submit" id="submitButton" class="btn btn-primary">Go</button>
-        </form>
+       
         <ul id="topMenu" class="nav pull-right">
           <li class="">
             <a href="#" routerLink="/bar/home">Home</a>
@@ -34,8 +34,8 @@
             <a href="contact.html">Contact</a>
           </li>
           <li class="">
-            <a href="#login" role="button" data-toggle="modal" style="padding-right:0">
-              <span class="btn btn-large btn-success">Login</span>
+            <a href="javascript:void(0)" role="button" data-toggle="modal" style="padding-right:0">
+              <span class="btn btn-large btn-success" (click)="showLoginScreen();">Login</span>
             </a>
 
           </li>

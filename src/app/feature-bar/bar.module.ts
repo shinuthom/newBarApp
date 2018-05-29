@@ -22,6 +22,7 @@ import { BarEffects } from './effects/bar.effects';
 import { BackendService } from './shared/services/backend.service';
 import { BeToFeMapperService } from './shared/services/be-to-fe-mapper.service';
 import { InfiniteScrollModule } from "angular2-infinite-scroll";
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { InfiniteScrollModule } from "angular2-infinite-scroll";
     CommonModule,
     BarRoutingModule,
     InfiniteScrollModule,
+    SharedModule,
     StoreModule.provideStore(reducer),
     EffectsModule.run(BarEffects),
     StoreDevtoolsModule.instrumentOnlyWithExtension({
