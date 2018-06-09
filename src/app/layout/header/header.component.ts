@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter  } from '@angular/core';
+import { SharedService } from './../../shared/shared.service'
 
 @Component({
   selector: 'app-header',
@@ -7,13 +8,19 @@ import { Component, OnInit, Output, EventEmitter  } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
-  @Output() showLogin: EventEmitter<boolean> = new EventEmitter();
+  constructor(private sharedService: SharedService) { }
+  isUserLoggedIn: boolean = false;  
 
   ngOnInit() {
+    this.sharedService.isUserLoggedIn.subscribe(d=>{
+      this.isUserLoggedIn = d;
+    })
   }
   showLoginScreen() {
-    this.showLogin.emit(true);
+    this.sharedService.showLoginFun(true);
   }
-
+  Logout() {
+    localStorage.removeItem('userDetails');
+    this.sharedService.setUserLoggedIn(false);
+  }
 }

@@ -35,7 +35,8 @@
           </li>
           <li class="">
             <a href="javascript:void(0)" role="button" data-toggle="modal" style="padding-right:0">
-              <span class="btn btn-large btn-success" (click)="showLoginScreen();">Login</span>
+              <span *ngIf="!isUserLoggedIn" class="btn btn-large btn-success" (click)="showLoginScreen();">Login</span>
+              <span *ngIf="isUserLoggedIn" class="btn btn-large btn-success" (click)="Logout();">Logout</span>
             </a>
 
           </li>

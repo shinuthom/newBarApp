@@ -4,6 +4,7 @@ import { AppState } from '../../app.state';
 import { BarActions } from '../../actions/bar.actions';
 import { Observable } from 'rxjs/observable';
 import { getBarList, getPreviousBarCount } from './../../reducers/bar.selector';
+import { SharedService } from './../../../shared/shared.service';
 
 
 @Component({
@@ -13,13 +14,17 @@ import { getBarList, getPreviousBarCount } from './../../reducers/bar.selector';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private store: Store<AppState>, private barActions: BarActions) { }
+  constructor(private store: Store<AppState>, private barActions: BarActions, private sharedService: SharedService) { }
+  triggerLogin: boolean = false;
   barList$: Observable<any>;
   barListCount: number = 0;
   previousBarCount$: Observable<any>;
   triggerBarListService: boolean = true;
 
   ngOnInit() {
+   this.sharedService.showLogin.subscribe(d => {
+    this.triggerLogin = d;
+   });
     this.store.dispatch(this.barActions.fetchBarList(this.barListCount));
     this.barList$ = this.store.select(getBarList);
     this.barList$.subscribe(data => {
@@ -38,4 +43,5 @@ export class HomeComponent implements OnInit {
       this.barList$ = this.store.select(getBarList);
     }
   }
+  
 }

@@ -13,6 +13,10 @@ export class BarActions {
     static FETCH_BAR_DETAILS_SUCCESS = 'FETCH_BAR_DETAILS_SUCCESS';
     static FETCH_BAR_DETAILS_FAILURE = 'FETCH_BAR_DETAILS_FAILURE';
 
+    static FETCH_USER_DETAILS = 'FETCH_USER_DETAILS';
+    static FETCH_USER_DETAILS_SUCCESS = 'FETCH_USER_DETAILS_SUCCESS';
+    static FETCH_USER_DETAILS_FAILURE = 'FETCH_USER_DETAILS_FAILURE';
+ 
     fetchBarList(data: any): Action {
         return {
             type: BarActions.FETCH_BAR_LIST,
@@ -66,6 +70,25 @@ export class BarActions {
     fetchBarDetailsFailure(data: any): Action {
         return {
             type: BarActions.FETCH_BAR_DETAILS_FAILURE,
+            payload: data
+        }
+    }
+
+    fetchUserDetails(data: any): Action {
+        return {
+            type: BarActions.FETCH_USER_DETAILS,
+            payload: data
+        };
+    };
+    fetchUserDetailsSuccess(data: any): Action {
+        return {
+            type: BarActions.FETCH_USER_DETAILS_SUCCESS,
+            payload: data
+        };
+    };
+    fetchUserDetailsFailure(data: any): Action {
+        return {
+            type: BarActions.FETCH_USER_DETAILS_FAILURE,
             payload: data
         }
     }

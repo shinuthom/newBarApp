@@ -28,6 +28,12 @@ export class BarEffects {
         .ofType(BarActions.FETCH_BAR_DETAILS)
         .switchMap((action: Action) => this.backendService.fetchBarDetails(action.payload))
         .map((data: any) => this.successOrFailed(data, this.barActions.fetchBarDetailsSuccess, this.barActions.fetchBarDetailsFailure));
+    @Effect()
+    userDetails$ = this.actions$
+        .ofType(BarActions.FETCH_USER_DETAILS)
+        .switchMap((action: Action) => this.backendService.userLogin(action.payload))
+        .map((data: any) => this.successOrFailed(data, this.barActions.fetchUserDetailsSuccess, this.barActions.fetchUserDetailsFailure));
+
 
     successOrFailed(data, successAction, failureAction){
         if(data.hasError) {

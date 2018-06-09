@@ -23,4 +23,7 @@ export class BeToFeMapperService {
 
         return bar;
     }
+    mapUserDetails(userRes) {
+        return userRes;
+    }
 }
